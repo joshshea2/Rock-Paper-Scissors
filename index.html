@@ -15,8 +15,8 @@
            return (randomChoice);
            
        }
-       // assign values to function playRound parameters
-       let playerSelection = prompt("Rock, Paper, or Scissors?");
+       // assign values to function playRound parameters, .toLowerCase for case-insensitive
+       let playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
        let computerSelection = computerPlay();
        // create function playRound using if..else statement
        function playRound(playerSelection, computerSelection) {
@@ -40,7 +40,7 @@
            }  else if (playerSelection == "scissors" && computerSelection == "scissors") {
             console.log("It's a tie!");
            }  else {
-            console.log("Answer in lowercase please");
+            console.log("Please use rock, paper, or scissors");
            }    
            
        }
