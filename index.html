@@ -6,8 +6,17 @@
 <h1>Rock Paper Scissors</h1>
 <body>
     <script>
-       
-    
+        // let choices hold array of values
+       let choices = ['rock', 'paper', 'scissors'];
+       // randomChoice print random choice based off length of array (0, 1, or 2)
+       let randomChoice = choices[Math.floor(Math.random() * choices.length)];
+       // function to return random array value
+       function computerPlay() {
+           return (randomChoice);
+           
+       }
+       // test function in console log
+       console.log(computerPlay());
     
         
 
