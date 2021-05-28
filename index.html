@@ -10,42 +10,63 @@
        let choices = ['rock', 'paper', 'scissors'];
        // randomChoice print random choice based off length of array (0, 1, or 2)
        let randomChoice = choices[Math.floor(Math.random() * choices.length)];
-       // function to return random array value
-       function computerPlay() {
-           return (randomChoice);
+       let playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
+       
+       let gameCount = 0;
+       let userWins = 0;
+       let computerWins = 0;
+      
+
+       function game() {
+           if (gameCount == 5 && userWins > computerWins) {
+               return "You Win!! " + userWins + " to " + computerWins;
+           } else if (gameCount == 5 && userWins < computerWins) {
+               return "You Lose " + userWins + " to " + computerWins;
+           } else {
+               return "error";
+           }
+       
+
+
+          // function to return random array value
+         function computerPlay() {
+             return randomChoice;     
+         }
+
+          // assign values to function playRound parameters, .toLowerCase for case-insensitive
+       
+       let computerSelection = computerPlay();
+
+       
+          // create function playRound using if..else statement
+         function playRound(playerSelection, computerSelection) {
+                    // if..else, else..if for each possible combination
+               if (playerSelection == "rock" && computerSelection == "paper") {
+              return "You lose! Paper beats rock" && gameCount++ && computerWins++;
+              }  else if (playerSelection == "rock" && computerSelection == "scissors") {
+              return "You win! Rock beats scissors" && gameCount++ && userWins++;
+             }  else if (playerSelection == "rock" && computerSelection == "rock") {
+              return "It's a tie!" && gameCount++;
+             }  else if (playerSelection == "paper" && computerSelection == "rock") {
+              return "You win! Paper beats rock" && gameCount++ && userWins++;
+              }  else if (playerSelection == "paper" && computerSelection == "scissors") {
+               return "You lose! Scissors beat paper" && gameCount++ && computerWins++;
+              }  else if (playerSelection == "paper" && computerSelection == "paper") {
+               return "It's a tie!" && gameCount++;
+             }  else if (playerSelection == "scissors" && computerSelection == "rock") {
+               return "You lose! Rock beats scissors" && gameCount++ && computerWins++;
+             }  else if (playerSelection == "scissors" && computerSelection == "paper") {
+               return "You win! Scissors beat paper" && gameCount++ && userWins++;
+             }  else if (playerSelection == "scissors" && computerSelection == "scissors") {
+              return "It's a tie!" && gameCount++;
+             }  else {
+              return "Please use rock, paper, or scissors";
+             }    
            
        }
-       // assign values to function playRound parameters, .toLowerCase for case-insensitive
-       let playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
-       let computerSelection = computerPlay();
-       // create function playRound using if..else statement
-       function playRound(playerSelection, computerSelection) {
-                // if..else, else..if for each possible combination
-           if (playerSelection == "rock" && computerSelection == "paper") {
-            return "You lose! Paper beats rock";
-           }  else if (playerSelection == "rock" && computerSelection == "scissors") {
-            return "You win! Rock beats scissors";
-           }  else if (playerSelection == "rock" && computerSelection == "rock") {
-            return "It's a tie!";
-           }  else if (playerSelection == "paper" && computerSelection == "rock") {
-            return "You win! Paper beats rock";
-           }  else if (playerSelection == "paper" && computerSelection == "scissors") {
-            return "You lose! Scissors beat paper";
-           }  else if (playerSelection == "paper" && computerSelection == "paper") {
-            return "It's a tie!";
-           }  else if (playerSelection == "scissors" && computerSelection == "rock") {
-            return "You lose! Rock beats scissors";
-           }  else if (playerSelection == "scissors" && computerSelection == "paper") {
-            return "You win! Scissors beat paper";
-           }  else if (playerSelection == "scissors" && computerSelection == "scissors") {
-            return "It's a tie!";
-           }  else {
-            return "Please use rock, paper, or scissors";
-           }    
-           
        }
        // console log to show result in browser console
-       console.log(playRound(playerSelection, computerSelection));
+       console.log(game());
     
         
 
