@@ -1,5 +1,5 @@
 
-const playerSelection = prompt('rock, paper, or scissors').toLowerCase;
+const playerSelection = prompt('rock, paper, or scissors').toLowerCase();
 const options = ['rock', 'paper', 'scissors'];
 const computerSelection = options[Math.floor(Math.random() * options.length)]; // make random choice for computer 
 
@@ -11,7 +11,8 @@ const computerSelection = options[Math.floor(Math.random() * options.length)]; /
         // for a tie
      if (playerSelection === computerSelection) {
         console.log('it\'s a tie');
-     }   
+     }  
+      
         // user chooses rock
      if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
@@ -20,6 +21,7 @@ const computerSelection = options[Math.floor(Math.random() * options.length)]; /
              console.log('you win');
          }
      }
+
         // user chooses paper
      if (playerSelection === 'paper') {
          if (computerSelection === 'rock') {
@@ -28,6 +30,7 @@ const computerSelection = options[Math.floor(Math.random() * options.length)]; /
              console.log('you lose');
          }
      }
+
         // user chooses scissors
      if (playerSelection === 'scissors') {
          if (computerSelection === 'rock') {
@@ -36,6 +39,7 @@ const computerSelection = options[Math.floor(Math.random() * options.length)]; /
              console.log('you win');
          }
      }
+
     }
 
- console.log(playRound());     
+  console.log(playRound(playerSelection, computerSelection));
