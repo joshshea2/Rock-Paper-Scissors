@@ -20,7 +20,7 @@ function game() {
         console.log(`game over, you lose - ${playerScore} to ${computerScore}`);
 
     } else {
-        console.log('How did 5 ties happen in a row?')
+        console.log('ended in a draw');
     }
   
 }
