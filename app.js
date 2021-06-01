@@ -3,43 +3,44 @@ const playerSelection = prompt('rock, paper, or scissors').toLowerCase;
 const options = ['rock', 'paper', 'scissors'];
 const computerSelection = options[Math.floor(Math.random() * options.length)];
 
-console.log(computerSelection);
 
 
  function playRound(playerSelection, computerSelection) {
 
-    if (playerSelection === computerSelection) {
+    
+
+     if (playerSelection === computerSelection) {
         console.log('it\'s a tie');
-    }   
+     }   
      
-    if (playerSelection === 'rock') {
+     if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
-            console.log('you lose');
-        } else if (computerSelection === 'scissors') {
-            console.log('you win');
-        }
+          console.log('you lose');
+         } else if (computerSelection === 'scissors') {
+             console.log('you win');
+         }
+     }
+
+     if (playerSelection === 'paper') {
+         if (computerSelection === 'rock') {
+             console.log('you win');
+         } else if (computerSelection === 'scissors') {
+             console.log('you lose');
+         }
+     }
+
+     if (playerSelection === 'scissors') {
+         if (computerSelection === 'rock') {
+             console.log('you lose');
+         } else if (computerSelection === 'paper') {
+             console.log('you win');
+         }
+     }
     }
 
-    if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-            console.log('you win');
-        } else if (computerSelection === 'scissors') {
-            console.log('you lose');
-        }
-    }
+// let playMatch = playRound(playerSelection, computerSelection);
 
-    if (playerSelection === 'scissors') {
-        if (computerSelection === 'rock') {
-            console.log('you lose');
-        } else if (computerSelection === 'paper') {
-            console.log('you win');
-        }
-    }
-    }
-
-let playMatch = playRound(playerSelection, computerSelection);
-
-console.log(playMatch);     
+ console.log(playRound());     
 
 //      if (playerSelection === computerSelection) {
 //          console.log('it\'s a tie');
