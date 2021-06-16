@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Rock Paper Scissors</title>
-
+  <head>
+    <title>RockPaperScissors</title>
     <!-- to stop 404 error from live reload -->
-    <link rel="icon" href="data:;base64,=">
-    
-</head>
-<body>
-  <h1>Rock Paper Scissors</h1>
-  <script src="app.js"></script>
-</body>
+    <link rel="icon" href="data:;base64,=" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="names">
+        <div class="player-score">
+          <h2>PLAYER</h2>
+        </div>
+
+        <div class="computer-score">
+          <h2>COMPUTER</h2>
+        </div>
+
+        <div class="score">
+          <p>0</p>
+          <p class="seperatorLine"></p>
+          <p>0</p>
+        </div>
+      </div>
+
+      <div class="introScreen">
+        <h1 class="title">Rock Paper Scissors</h1>
+        <button class="playBtn">PLAY</button>
+      </div>
+
+      <div class="winner">
+        <h2>Make your choice</h2>
+      </div>
+
+      <div class="choices">
+        <button class="btn" id="rock">Rock</button>
+        <button class="btn" id="paper">Paper</button>
+        <button class="btn" id="scissors">Scissors</button>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
 </html>

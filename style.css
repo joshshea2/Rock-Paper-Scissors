@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  height: 100vh;
+  background-color: rgb(148, 119, 119);
+}
+
+.names {
+  display: flex;
+  justify-content: space-around;
+}
+.score {
+  display: flex;
+  justify-content: space-around;
+  height: 15vh;
+  padding: 30px;
+}
+
+.introScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 30vh;
+  align-items: center;
+}
+
+.title {
+  font-size: 35px;
+  color: darkmagenta;
+}
+
+.playBtn {
+  padding: 8px;
+  background-color: chocolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 150px;
+}
+
+.mainScreen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background: cornsilk;
+  height: 50px;
+  width: 150px;
+}
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* .winner {
+  display: flex;
+  justify-content: center;
+} */
