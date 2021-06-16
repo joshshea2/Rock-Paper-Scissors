@@ -85,61 +85,64 @@ const game = () => {
   };
 
   const startMatch = () => {
-    const playerChoice = document.querySelectorAll('.choices button');
+    const playerChoices = document.querySelectorAll('.choices button');
     const choices = ['rock', 'paper', 'scissors'];
     const computerSelection = choices[Math.floor(Math.random() * choices.length)];
 
-    playerChoice.forEach(playerChoice => {
+    playerChoices.forEach(playerChoice => {
       playerChoice.addEventListener('click', function () {
         const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-        console.log(computerSelection);
+        playRound(this.id, computerSelection);
+        // console.log(playerSelection);
+        // console.log(computerSelection);
       });
     });
   };
 
-  // function playRound(playerChoices, computerSelection) {
-  //   // for a tie
-  //   if (playerChoices === computerSelection) {
-  //     console.log("it's a tie");
-  //   }
+  const playRound = (playerSelection, computerSelection) => {
+    const winnerText = document.querySelector('.winner');
+    // for a tie
+    if (playerSelection === computerSelection) {
+      winnerText.textContent = "It's a tie!";
+      console.log("it's a tie");
+    }
 
-  //   // user chooses rock
-  //   if (playerSelection.textContent === 'Rock') {
-  //     if (computerSelection === 'Paper') {
-  //       console.log('you lose');
-  //       computerScore++;
-  //     } else if (computerSelection === 'Scissors') {
-  //       console.log('you win');
-  //       playerScore++;
-  //     }
-  //   }
+    // user chooses rock
+    if (playerSelection === 'rock') {
+      if (computerSelection === 'paper') {
+        winnerText.textContent = 'You Lose';
+        console.log('you lose');
+      } else if (computerSelection === 'scissors') {
+        winnerText.textContent = 'You Win!';
+        console.log('you win');
+      }
+    }
 
-  //   // user chooses paper
-  //   if (playerSelection.textContent === 'Paper') {
-  //     if (computerSelection === 'Rock') {
-  //       console.log('you win');
-  //       playerScore++;
-  //     } else if (computerSelection === 'Scissors') {
-  //       console.log('you lose');
-  //       computerScore++;
-  //     }
-  //   }
+    // user chooses paper
+    if (playerSelection === 'paper') {
+      if (computerSelection === 'rock') {
+        winnerText.textContent = 'You Win!';
+        console.log('you win');
+      } else if (computerSelection === 'scissors') {
+        winnerText.textContent = 'You Lose';
+        console.log('you lose');
+      }
+    }
 
-  //   // user chooses scissors
-  //   if (playerSelection.textContent === 'Scissors') {
-  //     if (computerSelection === 'Rock') {
-  //       console.log('you lose');
-  //       computerScore++;
-  //     } else if (computerSelection === 'Paper') {
-  //       console.log('you win');
-  //       playerScore++;
-  //     }
-  //   }
-  // }
+    // user chooses scissors
+    if (playerSelection === 'scissors') {
+      if (computerSelection === 'rock') {
+        winnerText.textContent = 'You Lose';
+        console.log('you lose');
+      } else if (computerSelection === 'paper') {
+        winnerText.textContent = 'You Win!';
+        console.log('you win');
+      }
+    }
+  };
 
-  startMatch();
   introClick();
-  // playRound(playerChoices, computerSelection);
+  startMatch();
 };
 
 game();
