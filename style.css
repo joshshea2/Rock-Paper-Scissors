@@ -9,28 +9,29 @@ section {
   background-color: rgb(148, 119, 119);
 }
 
-.names {
-  display: flex;
-  justify-content: space-around;
-}
 .score {
   display: flex;
-  justify-content: space-around;
-  height: 15vh;
-  padding: 30px;
+  justify-content: space-evenly;
+  height: 25vh;
+  padding: 3px;
+  align-items: center;
 }
 
 .introScreen {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 30vh;
+  justify-content: space-around;
+  height: 50vh;
   align-items: center;
 }
 
 .title {
   font-size: 35px;
   color: darkmagenta;
+  display: flex;
+  justify-content: center;
+  padding-top: 75px;
+  padding-bottom: 50px;
 }
 
 .playBtn {
@@ -46,6 +47,7 @@ section {
 .mainScreen {
   opacity: 0;
   pointer-events: none;
+  position: absolute;
 }
 
 .choices {
@@ -62,9 +64,34 @@ section {
 div.fadeOut {
   opacity: 0;
   pointer-events: none;
+  transition: 0.5s ease;
 }
 
-/* .winner {
+div.fadeIn {
+  opacity: 100;
+  transition: 0.7s ease 0.7s;
+}
+
+.winner {
+  text-align: center;
+  height: 30vh;
+  padding: 10px;
+}
+
+.seperatorLine {
+  border: aquamarine;
+  border-radius: 4px;
+  margin-top: 140px;
+  padding-bottom: 100px;
+  border-style: solid;
+}
+
+.player-score {
   display: flex;
-  justify-content: center;
-} */
+  flex-direction: column;
+}
+
+.computer-score {
+  display: flex;
+  flex-direction: column;
+}

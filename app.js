@@ -66,9 +66,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const game = () => {
-  let pScore = 0;
-  let cScore = 0;
+  let pScore = 0; // starting player score
+  let cScore = 0; // starting computer score
 
+  // what happens when play button is clicked
   const introClick = () => {
     const playBtn = document.querySelector('.playBtn');
     const introScreen = document.querySelector('.introScreen');
@@ -76,17 +77,20 @@ const game = () => {
 
     playBtn.addEventListener('click', () => {
       introScreen.classList.add('fadeOut');
-      mainScreen.classList.toggle('mainScreen');
+      setTimeout(() => {
+        mainScreen.classList.remove('mainScreen'); // delay to remove class before fadeIn is added
+      }, 500);
+      mainScreen.classList.add('fadeIn');
     });
   };
 
   const startMatch = () => {
-    const playerChoices = document.querySelectorAll('.choices button');
+    const playerChoice = document.querySelectorAll('.choices button');
     const choices = ['rock', 'paper', 'scissors'];
     const computerSelection = choices[Math.floor(Math.random() * choices.length)];
 
-    playerChoices.forEach(playerChoices => {
-      playerChoices.addEventListener('click', function () {
+    playerChoice.forEach(playerChoice => {
+      playerChoice.addEventListener('click', function () {
         const computerSelection = choices[Math.floor(Math.random() * choices.length)];
         console.log(computerSelection);
       });
