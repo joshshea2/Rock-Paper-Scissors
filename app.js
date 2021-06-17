@@ -66,8 +66,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const game = () => {
-  let pScore = 0; // starting player score
-  let cScore = 0; // starting computer score
+  let pScore = '0'; // starting player score
+  let cScore = '0'; // starting computer score
 
   // what happens when play button is clicked
   const introClick = () => {
@@ -93,14 +93,24 @@ const game = () => {
       playerChoice.addEventListener('click', function () {
         const computerSelection = choices[Math.floor(Math.random() * choices.length)];
         playRound(this.id, computerSelection);
+        updateScore();
+        console.log(pScore);
         // console.log(playerSelection);
         // console.log(computerSelection);
       });
     });
   };
 
+  const updateScore = () => {
+    const playerScore = document.querySelector('.playerScore');
+    const computerScore = document.querySelector('.computerScore');
+    playerScore.textContent = pScore;
+    computerScore.textContent = cScore;
+  };
+
   const playRound = (playerSelection, computerSelection) => {
     const winnerText = document.querySelector('.winner');
+
     // for a tie
     if (playerSelection === computerSelection) {
       winnerText.textContent = "It's a tie!";
@@ -111,10 +121,14 @@ const game = () => {
     if (playerSelection === 'rock') {
       if (computerSelection === 'paper') {
         winnerText.textContent = 'You Lose';
-        console.log('you lose');
+        cScore++;
+        updateScore();
+        return;
       } else if (computerSelection === 'scissors') {
         winnerText.textContent = 'You Win!';
-        console.log('you win');
+        pScore++;
+        updateScore();
+        return;
       }
     }
 
@@ -122,10 +136,14 @@ const game = () => {
     if (playerSelection === 'paper') {
       if (computerSelection === 'rock') {
         winnerText.textContent = 'You Win!';
-        console.log('you win');
+        pScore++;
+        updateScore();
+        return;
       } else if (computerSelection === 'scissors') {
         winnerText.textContent = 'You Lose';
-        console.log('you lose');
+        cScore++;
+        updateScore();
+        return;
       }
     }
 
@@ -133,10 +151,14 @@ const game = () => {
     if (playerSelection === 'scissors') {
       if (computerSelection === 'rock') {
         winnerText.textContent = 'You Lose';
-        console.log('you lose');
+        cScore++;
+        updateScore();
+        return;
       } else if (computerSelection === 'paper') {
         winnerText.textContent = 'You Win!';
-        console.log('you win');
+        pScore++;
+        updateScore();
+        return;
       }
     }
   };

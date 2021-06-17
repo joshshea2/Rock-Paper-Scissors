@@ -4,24 +4,26 @@
   box-sizing: border-box;
 }
 
-section {
+#everyThing {
   height: 100vh;
   background-color: rgb(148, 119, 119);
+  overflow: hidden;
 }
 
-.score {
+.scoreBoard {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 25vh;
-  padding: 3px;
-  align-items: center;
+  padding-top: 70px;
+  padding-left: 775px;
+  padding-right: 775px;
 }
 
 .introScreen {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 50vh;
+  height: 60vh;
   align-items: center;
 }
 
@@ -37,9 +39,6 @@ section {
 .playBtn {
   padding: 8px;
   background-color: chocolate;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 50px;
   width: 150px;
 }
@@ -52,7 +51,10 @@ section {
 
 .choices {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-top: 100px;
 }
 
 .btn {
@@ -61,13 +63,13 @@ section {
   width: 150px;
 }
 
-div.fadeOut {
+section.fadeOut {
   opacity: 0;
   pointer-events: none;
   transition: 0.5s ease;
 }
 
-div.fadeIn {
+section.fadeIn {
   opacity: 100;
   transition: 0.7s ease 0.7s;
 }
@@ -75,23 +77,27 @@ div.fadeIn {
 .winner {
   text-align: center;
   height: 30vh;
-  padding: 10px;
+  padding: 150px;
+  font-size: 40px;
 }
 
-.seperatorLine {
+.scoreDivider {
   border: aquamarine;
   border-radius: 4px;
-  margin-top: 140px;
-  padding-bottom: 100px;
-  border-style: solid;
+  border-style: outset;
+  display: flex;
+  align-items: center;
 }
 
-.player-score {
+.scoreBoardLeft {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
-.computer-score {
+.scoreBoardRight {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }

@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>RockPaperScissors</title>
-    <!-- to stop 404 error from live reload -->
-    <link rel="icon" href="data:;base64,=" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <title>R-P-C</title>
   </head>
-  <body>
-    <section>
-      <div class="mainScreen">
-        <div class="score">
-          <div class="player-score">
-            <h2>PLAYER</h2>
-            <p>0</p>
-          </div>
-
+  <body id="everyThing">
+    <section class="mainScreen">
+      <section class="scoreBoard">
+        <div class="scoreBoardLeft">
           <div>
-            <p class="seperatorLine"></p>
+            <h2>PLAYER</h2>
           </div>
-
-          <div class="computer-score">
-            <h2>COMPUTER</h2>
-            <p>0</p>
+          <div>
+            <h2 class="playerScore">0</h2>
           </div>
         </div>
-
-        <div class="winner">
-          <h2>Make your choice</h2>
+        <div class="scoreDivider">
+          <h2></h2>
         </div>
-
-        <div class="choices">
-          <button class="btn" id="rock">Rock</button>
-          <button class="btn" id="paper">Paper</button>
-          <button class="btn" id="scissors">Scissors</button>
+        <div class="scoreBoardRight">
+          <h2>COMPUTER</h2>
+          <h2 class="computerScore">0</h2>
         </div>
-      </div>
+      </section>
+      <section class="winner">
+        <h2>Make your choice</h2>
+      </section>
+      <section class="choices">
+        <button class="btn" id="rock">Rock</button>
+        <button class="btn" id="paper">Paper</button>
+        <button class="btn" id="scissors">Scissors</button>
+      </section>
+    </section>
 
-      <div class="introScreen">
-        <h1 class="title">Rock Paper Scissors</h1>
-        <button class="playBtn">PLAY</button>
-      </div>
+    <section class="introScreen">
+      <h1 class="title">Rock Paper Scissors</h1>
+      <button class="playBtn">PLAY</button>
     </section>
 
     <script src="app.js"></script>
