@@ -1,70 +1,4 @@
-// let playerScore = 0;
-// let computerScore = 0;
-
-// // function game() {
-// //     for (i = 0; i < 5; i++) { // loop for the game to run 5 times
-// //       // const playerSelection = prompt('rock, paper, or scissors').toLowerCase();
-
-// // const options = ["rock", "paper", "scissors"];
-// // const computerSelection = options[Math.floor(Math.random() * options.length)]; // make random choice for computer
-
-// //       playRound(playerSelection, computerSelection); // playRound function used in loop
-
-// //     }
-// //     // message to display after end of loop
-// //     if (playerScore > computerScore) {
-// //         console.log(`game over, you win! - ${playerScore} to ${computerScore}`);
-
-// //     } else if (playerScore < computerScore) {
-// //         console.log(`game over, you lose - ${playerScore} to ${computerScore}`);
-
-// //     } else {
-// //         console.log('ended in a draw');
-// //     }
-
-// // }
-// // console.log(game());
-
-// // function to play 1 round
-
-// const options = ["Rock", "Paper", "Scissors"];
-// const computerSelection = options[Math.floor(Math.random() * options.length)]; // make random choice for computer
-// const playerOptions = document.querySelectorAll("#btn");
-
-// function game() {
-// 	for (const playerSelection of playerOptions) {
-// 		playerSelection.addEventListener("click", function () {
-// 			console.log(this.textContent);
-// 		});
-
-// 		playRound(computerSelection, playerSelection);
-// 	}
-// }
-
-// game();
-
-// // game();
-
-// //DOM Manipulation
-
-// // const btn1 = document.querySelector('#btn1');
-// // const btn2 = document.querySelector('#btn2');
-// // const btn3 = document.querySelector('#btn3');
-
-// // btn1.addEventListener('click', () => {
-// //     console.log('clicked rock');
-// // });
-
-// // btn2.addEventListener('click', () => {
-// //     console.log('clicked paper');
-// // });
-
-// // btn3.addEventListener('click', () => {
-// //     console.log('clicked siccors');
-// // });
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// function for entire game
 const game = () => {
   let pScore = '0'; // starting player score
   let cScore = '0'; // starting computer score
@@ -75,6 +9,7 @@ const game = () => {
     const introScreen = document.querySelector('.introScreen');
     const mainScreen = document.querySelector('.mainScreen');
 
+    // intro screen fades out, main screen fades in
     playBtn.addEventListener('click', () => {
       introScreen.classList.add('fadeOut');
       setTimeout(() => {
@@ -84,23 +19,22 @@ const game = () => {
     });
   };
 
+  // game starts by choosing rock, paper, or scissors button
   const startMatch = () => {
     const playerChoices = document.querySelectorAll('.choices button');
     const choices = ['rock', 'paper', 'scissors'];
-    const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    const computerSelection = choices[Math.floor(Math.random() * choices.length)]; // generates computer random value
 
+    // what happens when one of the buttons are clicked (any of them)
     playerChoices.forEach(playerChoice => {
       playerChoice.addEventListener('click', function () {
         const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-        playRound(this.id, computerSelection);
-        updateScore();
-        console.log(pScore);
-        // console.log(playerSelection);
-        // console.log(computerSelection);
+        playRound(this.id, computerSelection); // 'this' keyword represents the element being clicked
       });
     });
   };
 
+  // function to update score on page
   const updateScore = () => {
     const playerScore = document.querySelector('.playerScore');
     const computerScore = document.querySelector('.computerScore');
@@ -108,16 +42,16 @@ const game = () => {
     computerScore.textContent = cScore;
   };
 
+  // function that compares player's and computer's selected values
   const playRound = (playerSelection, computerSelection) => {
     const winnerText = document.querySelector('.winner');
 
     // for a tie
     if (playerSelection === computerSelection) {
       winnerText.textContent = "It's a tie!";
-      console.log("it's a tie");
     }
 
-    // user chooses rock
+    // user chooses rock (increment score && run updateScore function)
     if (playerSelection === 'rock') {
       if (computerSelection === 'paper') {
         winnerText.textContent = 'You Lose';
@@ -167,4 +101,4 @@ const game = () => {
   startMatch();
 };
 
-game();
+game(); // run game
